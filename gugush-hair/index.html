@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>America Hairstyle International | NYC Hair Salon</title>
+<title>Gugush Hair Studio | New York City</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -101,12 +101,18 @@ nav.scrolled{box-shadow:0 2px 24px rgba(0,0,0,.06)}
 
 /* Products */
 .products{background:var(--ivory);padding:100px 0}
-.products-inner{max-width:1100px;margin:0 auto;padding:0 48px}
-.products-head{text-align:center;margin-bottom:56px}
-.product-logos{display:flex;flex-wrap:wrap;justify-content:center;gap:40px 56px;align-items:center}
-.product-logos span{font-family:var(--display);font-size:clamp(18px,2.2vw,26px);font-weight:400;color:var(--light);letter-spacing:2px;transition:color .3s}
-.product-logos span:hover{color:var(--gold-dk)}
-.products-note{text-align:center;margin-top:40px;font-size:14px;font-weight:300;color:var(--mid);line-height:1.7;max-width:560px;margin-left:auto;margin-right:auto}
+.prod-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;max-width:1100px;margin:0 auto;padding:0 48px}
+.prod-content .s-label{font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.prod-content h2{font-family:var(--serif);font-size:clamp(28px,3.5vw,42px);font-weight:400;line-height:1.2;color:var(--charcoal);margin-bottom:20px}
+.prod-content h2 em{font-style:italic;color:var(--gold-dk)}
+.prod-content p{font-size:15px;font-weight:300;color:var(--mid);line-height:1.9;margin-bottom:16px}
+.prod-list{list-style:none;margin-top:24px;margin-bottom:28px}
+.prod-list li{font-size:14px;font-weight:300;color:var(--mid);padding:10px 0;border-bottom:1px solid rgba(0,0,0,.05);display:flex;align-items:center;gap:12px}
+.prod-list li::before{content:'';display:inline-block;width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0}
+.prod-img{position:relative;overflow:hidden}
+.prod-img img{width:100%;aspect-ratio:3/4;object-fit:cover;filter:brightness(.92);transition:transform .7s}
+.prod-img:hover img{transform:scale(1.02)}
+.prod-img::after{content:'';position:absolute;top:-16px;left:-16px;right:16px;bottom:16px;border:1px solid var(--gold-lt);z-index:-1}
 
 /* Gallery strip */
 .gallery-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;height:300px;overflow:hidden}
@@ -121,16 +127,6 @@ nav.scrolled{box-shadow:0 2px 24px rgba(0,0,0,.06)}
 .cta-banner p{font-size:15px;font-weight:300;color:var(--faint);margin-bottom:32px;position:relative}
 .cta-banner .btn-gold{position:relative}
 
-/* Reviews */
-.reviews{background:var(--cream);padding:100px 0}
-.reviews-head{text-align:center;margin-bottom:56px}
-.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;padding:0 48px}
-.review-card{background:var(--ivory);border:1px solid rgba(0,0,0,.04);padding:36px 28px;transition:all .3s}
-.review-card:hover{box-shadow:0 8px 40px rgba(0,0,0,.06);transform:translateY(-3px)}
-.review-stars{color:var(--gold);font-size:16px;letter-spacing:2px;margin-bottom:16px}
-.review-card blockquote{font-family:var(--serif);font-size:16px;font-style:italic;color:var(--dark);line-height:1.6;margin-bottom:20px}
-.review-author{font-size:13px;font-weight:500;letter-spacing:1px;color:var(--mid)}
-
 /* Contact */
 .contact{background:var(--ivory);padding:100px 0}
 .contact-head{text-align:center;margin-bottom:56px}
@@ -142,21 +138,6 @@ nav.scrolled{box-shadow:0 2px 24px rgba(0,0,0,.06)}
 .c-val a:hover{color:var(--gold-dk)}
 .c-map{overflow:hidden;min-height:400px;background:var(--warm)}
 .c-map iframe{width:100%;height:100%;min-height:400px;border:0;filter:saturate(.5) contrast(.9) sepia(.15)}
-
-/* Newsletter */
-.newsletter{background:var(--warm);padding:80px 48px;text-align:center}
-.newsletter-inner{max-width:520px;margin:0 auto}
-.newsletter h2{font-family:var(--serif);font-size:clamp(24px,3vw,36px);font-weight:400;font-style:italic;color:var(--charcoal);margin-bottom:12px}
-.newsletter p{font-size:15px;font-weight:300;color:var(--mid);margin-bottom:32px;line-height:1.7}
-.nl-form{display:flex;gap:0;max-width:440px;margin:0 auto}
-.nl-form input{flex:1;padding:16px 20px;border:1px solid var(--faint);border-right:none;background:var(--ivory);font-family:var(--sans);font-size:14px;font-weight:300;color:var(--dark);outline:none;transition:border-color .3s}
-.nl-form input:focus{border-color:var(--gold)}
-.nl-form input::placeholder{color:var(--light)}
-.nl-form button{padding:16px 32px;font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--ivory);background:var(--gold);border:none;cursor:pointer;transition:background .3s}
-.nl-form button:hover{background:var(--gold-dk)}
-.nl-social{margin-top:24px;font-size:13px;color:var(--light)}
-.nl-social a{color:var(--gold-dk);text-decoration:none;font-weight:500;transition:color .3s}
-.nl-social a:hover{color:var(--charcoal)}
 
 /* Footer */
 footer{background:var(--charcoal);padding:48px 56px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:40px}
@@ -187,39 +168,33 @@ footer{background:var(--charcoal);padding:48px 56px;display:grid;grid-template-c
   .about-img::after{display:none}
   .svc-grid{grid-template-columns:1fr;padding:0 24px}
   .svc-head{padding:0 24px}
+  .prod-grid{grid-template-columns:1fr;gap:40px;padding:0 24px}
+  .prod-img::after{display:none}
   .gallery-strip{grid-template-columns:repeat(2,1fr);height:auto}
   .gs-img{height:200px}
-  .reviews-grid{grid-template-columns:1fr;padding:0 24px}
-  .reviews-head{padding:0 24px}
   .contact-grid{grid-template-columns:1fr;gap:32px;padding:0 24px}
   .contact-head{padding:0 24px}
-  .products-inner{padding:0 24px}
-  .product-logos{gap:24px 36px}
   footer{grid-template-columns:1fr;gap:16px;padding:32px 24px;text-align:center}
   .f-links{justify-content:center;flex-wrap:wrap}
   .f-copy{text-align:center}
   .welcome{padding:56px 24px}
   .cta-banner{padding:56px 24px}
-  .newsletter{padding:56px 24px}
-  .nl-form{flex-direction:column}
-  .nl-form input{border-right:1px solid var(--faint);border-bottom:none}
 }
 </style>
 </head>
 <body>
 
 <nav id="nav">
-  <a href="#" class="logo">AMERICA <em>Hairstyle</em></a>
+  <a href="#" class="logo">GUGUSH <em>Hair</em></a>
   <ul class="nav-links" id="nL">
-    <li><a href="#about" onclick="cN()">Mission</a></li>
+    <li><a href="#about" onclick="cN()">About</a></li>
     <li><a href="#services" onclick="cN()">Services</a></li>
     <li><a href="#products" onclick="cN()">Products</a></li>
-    <li><a href="#reviews" onclick="cN()">Reviews</a></li>
-    <li><a href="#contact" onclick="cN()">Contact</a></li>
+    <li><a href="#contact" onclick="cN()">Visit</a></li>
   </ul>
   <div class="nav-right">
-    <a href="tel:212-878-7007" class="nav-phone">(212) 878-7007</a>
-    <a href="tel:212-878-7007" class="nav-cta">Book Now</a>
+    <a href="tel:212-555-0100" class="nav-phone">(212) 555-0100</a>
+    <a href="tel:212-555-0100" class="nav-cta">Book Now</a>
   </div>
   <button class="nav-toggle" onclick="tN()"><span></span><span></span><span></span></button>
 </nav>
@@ -228,22 +203,22 @@ footer{background:var(--charcoal);padding:48px 56px;display:grid;grid-template-c
 <section class="hero">
   <div class="hero-left" style="animation:fadeUp .9s ease-out">
     <p class="hero-tag">New York City</p>
-    <h1><strong>Heighten</strong><br>Yourself</h1>
-    <p class="hero-desc">Welcome to America Hairstyle International &mdash; where world-class stylists and premium products come together to elevate your look to new heights.</p>
+    <h1>Are You Ready for<br><strong>a New &amp; Better</strong> <em>You?</em></h1>
+    <p class="hero-desc">Welcome to Gugush Hair Studio &mdash; where artistry meets expertise. Discover your most beautiful self with our master stylists and premium smoothing treatments.</p>
     <div class="hero-actions">
-      <a href="tel:212-878-7007" class="btn-gold">Book Appointment</a>
-      <a href="#services" class="btn-text">Our Services <span>&rarr;</span></a>
+      <a href="tel:212-555-0100" class="btn-gold">Book Appointment</a>
+      <a href="#services" class="btn-text">View Services <span>&rarr;</span></a>
     </div>
     <div class="hero-rating">
       <div class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div class="hero-rating-text"><strong>5.0</strong> &middot; Top-Rated on Google</div>
+      <div class="hero-rating-text"><strong>5.0</strong> &middot; Trusted by NYC Clients</div>
     </div>
   </div>
   <div class="hero-right">
-    <img src="images/hair-dramatic.jpg" alt="Beautiful dramatic hair styling">
+    <img src="images/hair-dramatic.jpg" alt="Beautiful hair styling at Gugush Hair Studio">
     <div class="hero-right-badge">
-      <div class="hrb-num">5.0</div>
-      <div class="hrb-text">Google Rating</div>
+      <div class="hrb-num">NYC</div>
+      <div class="hrb-text">Hair Studio</div>
     </div>
   </div>
 </section>
@@ -254,23 +229,24 @@ footer{background:var(--charcoal);padding:48px 56px;display:grid;grid-template-c
 <div class="welcome fi">
   <div class="welcome-inner">
     <div class="w-line"></div>
-    <h2>Welcome to America Hairstyle</h2>
-    <p>We believe that in every client there is beauty and uniqueness waiting to be revealed. Our mission is to highlight the beauty of the person inside and out.</p>
+    <h2>Welcome to Gugush Hair Studio</h2>
+    <p>Are you ready for a new and better you? Our master stylists bring decades of expertise to every cut, color, and smoothing treatment &mdash; creating looks that turn heads.</p>
   </div>
 </div>
 
-<!-- About / Mission -->
+<!-- About -->
 <section class="about" id="about">
   <div class="about-grid fi">
     <div class="about-img">
-      <img src="images/fresh-hair.jpg" alt="Fresh styled hair">
+      <img src="images/fresh-hair.jpg" alt="Fresh hair styling">
     </div>
     <div class="about-content">
-      <p class="s-label">Our Mission</p>
-      <h2>Internationally <em>Inspired</em></h2>
-      <p>At America Hairstyle International, our mission is to provide every client with a world-class salon experience. We bring together internationally trained talent and the finest professional products to deliver results that speak for themselves.</p>
-      <p>Whether you're looking for a bold new look or a subtle refresh, our salon provides a warm, welcoming environment where your vision comes to life. We specialize in all hair types and textures, and our expert stylists stay current with the latest trends and techniques.</p>
-      <a href="tel:212-878-7007" class="btn-gold" style="margin-top:28px;display:inline-block">Make Appointment</a>
+      <p class="s-label">About Gugush Hair Studio</p>
+      <h2>A Legacy of <em>Hair Artistry</em></h2>
+      <p>Gugush Hair Studio has built a reputation as one of New York City's premier salons. Founded on a passion for hair artistry and a commitment to excellence, our studio has been transforming clients and boosting confidence for years.</p>
+      <p>Our team of master stylists brings a wealth of experience in precision cutting, advanced color techniques, and the latest smoothing systems. From Brazilian Blowouts to bespoke keratin treatments, we specialize in delivering salon-perfect results that last.</p>
+      <p>Every visit to Gugush is an experience &mdash; from the moment you step through our doors, you'll feel the difference that true craftsmanship makes.</p>
+      <a href="tel:212-555-0100" class="btn-gold" style="margin-top:28px;display:inline-block">Make Appointment</a>
     </div>
   </div>
 </section>
@@ -284,97 +260,73 @@ footer{background:var(--charcoal);padding:48px 56px;display:grid;grid-template-c
   <div class="svc-grid fi">
     <div class="svc-card">
       <div class="svc-icon">&#9986;</div>
-      <h3>Haircuts &amp; Styling</h3>
-      <p>Precision cuts for men and women. From classic shapes to modern editorial trends, tailored to your face and lifestyle.</p>
+      <h3>Precision Cuts</h3>
+      <p>Expert cuts for men and women tailored to your face shape, hair texture, and lifestyle. From classic bobs to modern layers.</p>
     </div>
     <div class="svc-card">
       <div class="svc-icon">&#9672;</div>
       <h3>Color &amp; Highlights</h3>
-      <p>Full color, balayage, ombr&eacute;, highlights and lowlights using Redken, L'Or&eacute;al, and Pravana for vibrant, lasting results.</p>
+      <p>Full color, balayage, ombr&eacute;, highlights and dimensional color. Premium products for rich, long-lasting vibrancy.</p>
     </div>
     <div class="svc-card">
       <div class="svc-icon">&#10023;</div>
       <h3>Brazilian Blowout</h3>
-      <p>Our signature smoothing treatment. Eliminate frizz, reduce styling time, and enjoy silky, manageable hair for months.</p>
+      <p>Our signature smoothing treatment that eliminates frizz, reduces styling time, and delivers incredible shine for up to 12 weeks.</p>
     </div>
     <div class="svc-card">
       <div class="svc-icon">&#8766;</div>
       <h3>Keratin Treatments</h3>
-      <p>Professional keratin smoothing for all hair types. Restore shine, strength, and manageability with lasting results.</p>
-    </div>
-    <div class="svc-card">
-      <div class="svc-icon">&#9740;</div>
-      <h3>Perms &amp; Texture</h3>
-      <p>Expert texture services including perms, relaxers, and wave treatments customized to your unique hair type.</p>
+      <p>Professional keratin smoothing systems that restore manageability, tame unruly hair, and protect against humidity and damage.</p>
     </div>
     <div class="svc-card">
       <div class="svc-icon">&#10029;</div>
-      <h3>Hair Treatments</h3>
-      <p>Deep conditioning, scalp treatments, and restorative therapies using Joico, Paul Mitchell, and Viviscal products.</p>
+      <h3>Blowouts &amp; Styling</h3>
+      <p>Silk press, blowouts, updos, and special occasion styling. Leave the studio feeling polished and camera-ready.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">&#9740;</div>
+      <h3>Deep Conditioning</h3>
+      <p>Restorative treatments to repair damage, add moisture, and bring your hair back to life with professional-grade formulas.</p>
     </div>
   </div>
 </section>
 
 <!-- Products -->
 <section class="products" id="products">
-  <div class="products-inner fi">
-    <div class="products-head">
-      <p class="s-label">Products We Use</p>
-      <h2 class="s-heading">Premium Brands, <em>Exceptional Results</em></h2>
+  <div class="prod-grid fi">
+    <div class="prod-content">
+      <p class="s-label">Products &amp; Smoothing Systems</p>
+      <h2>Professional-Grade <em>Hair Care</em></h2>
+      <p>At Gugush Hair Studio, we use and recommend only the finest professional products and smoothing systems. Our stylists are certified in the latest treatment technologies to deliver transformative results.</p>
+      <ul class="prod-list">
+        <li>Brazilian Blowout Professional Smoothing Solutions</li>
+        <li>Keratin Complex Smoothing Therapy</li>
+        <li>Professional Color Lines &amp; Toners</li>
+        <li>Deep Conditioning &amp; Repair Treatments</li>
+        <li>Take-Home Maintenance Products</li>
+      </ul>
+      <a href="tel:212-555-0100" class="btn-gold">Ask About Products</a>
     </div>
-    <div class="product-logos">
-      <span>Brazilian Blowout</span>
-      <span>Paul Mitchell</span>
-      <span>Joico</span>
-      <span>Redken</span>
-      <span>Goldwell</span>
-      <span>L'Or&eacute;al</span>
-      <span>Pravana</span>
-      <span>Viviscal</span>
+    <div class="prod-img">
+      <img src="images/salon-products.jpg" alt="Professional salon products">
     </div>
-    <p class="products-note">We exclusively use professional-grade products from the industry's most trusted brands to ensure every service delivers salon-quality results that last.</p>
   </div>
 </section>
 
 <!-- Gallery strip -->
 <div class="gallery-strip">
-  <div class="gs-img"><img src="images/hairbrush.jpg" alt="Salon hairbrush"></div>
-  <div class="gs-img"><img src="images/hair-windswept.jpg" alt="Windswept hair"></div>
-  <div class="gs-img"><img src="images/salon-products.jpg" alt="Professional salon products"></div>
-  <div class="gs-img"><img src="images/product-minimal.jpg" alt="Minimal hair product"></div>
+  <div class="gs-img"><img src="images/hair-dramatic.jpg" alt="Dramatic hair styling"></div>
+  <div class="gs-img"><img src="images/hair-windswept.jpg" alt="Beautiful windswept hair"></div>
+  <div class="gs-img"><img src="images/hairbrush.jpg" alt="Professional styling tools"></div>
+  <div class="gs-img"><img src="images/product-minimal.jpg" alt="Hair care products"></div>
 </div>
 
 <!-- CTA Banner -->
 <div class="cta-banner">
-  <h2>Ready to Heighten Yourself?</h2>
-  <p>Book your appointment today and experience the America Hairstyle International difference.</p>
-  <a href="tel:212-878-7007" class="btn-gold">Book Your Appointment</a>
+  <h2>Ready for a New Signature Look?</h2>
+  <p>Book your appointment now and let our master stylists transform your hair.</p>
+  <a href="tel:212-555-0100" class="btn-gold">Book Your Appointment</a>
 </div>
-
-<!-- Reviews -->
-<section class="reviews" id="reviews">
-  <div class="reviews-head fi">
-    <p class="s-label">Testimonials</p>
-    <h2 class="s-heading">What Our Clients Say</h2>
-  </div>
-  <div class="reviews-grid fi">
-    <div class="review-card">
-      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <blockquote>&ldquo;Amazing experience! The stylists really listen to what you want and deliver every single time. My hair has never looked better.&rdquo;</blockquote>
-      <div class="review-author">&mdash; Happy Client</div>
-    </div>
-    <div class="review-card">
-      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <blockquote>&ldquo;I've been coming here for years and I wouldn't trust anyone else with my hair. The Brazilian Blowout is life-changing!&rdquo;</blockquote>
-      <div class="review-author">&mdash; Loyal Customer</div>
-    </div>
-    <div class="review-card">
-      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <blockquote>&ldquo;Professional, friendly, and incredibly talented. They transformed my hair and I left feeling like a million bucks.&rdquo;</blockquote>
-      <div class="review-author">&mdash; Satisfied Client</div>
-    </div>
-  </div>
-</section>
 
 <!-- Contact -->
 <section class="contact" id="contact">
@@ -384,48 +336,34 @@ footer{background:var(--charcoal);padding:48px 56px;display:grid;grid-template-c
   </div>
   <div class="contact-grid fi">
     <div>
-      <div class="c-block"><div class="c-label">Phone</div><div class="c-val"><a href="tel:212-878-7007">(212) 878-7007</a></div></div>
-      <div class="c-block"><div class="c-label">Website</div><div class="c-val"><a href="https://americahairstyleinternational.com" target="_blank">americahairstyleinternational.com</a></div></div>
-      <div class="c-block"><div class="c-label">Instagram</div><div class="c-val"><a href="https://www.instagram.com/americahairstyle/" target="_blank">@americahairstyle</a></div></div>
-      <div class="c-block"><div class="c-label">Location</div><div class="c-val" style="font-size:18px">New York City</div></div>
+      <div class="c-block"><div class="c-label">Location</div><div class="c-val"><a href="https://www.google.com/maps/search/Gugush+Hair+Studio+New+York+City" target="_blank">New York City</a></div></div>
+      <div class="c-block"><div class="c-label">Phone</div><div class="c-val"><a href="tel:212-555-0100">(212) 555-0100</a></div></div>
+      <div class="c-block"><div class="c-label">Follow Us</div><div class="c-val" style="font-size:18px;display:flex;gap:16px;align-items:center"><a href="#" title="Instagram" style="color:var(--gold);font-size:14px;letter-spacing:2px;text-transform:uppercase;font-family:var(--sans);font-weight:400">Instagram</a></div></div>
+      <div class="c-block"><div class="c-label">Hours</div><div class="c-val" style="font-size:18px">Open Daily &middot; By Appointment</div></div>
       <div style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap">
-        <a href="tel:212-878-7007" class="btn-gold">Book Appointment</a>
-        <a href="https://americahairstyleinternational.com" target="_blank" class="btn-text">Visit Website <span>&rarr;</span></a>
+        <a href="tel:212-555-0100" class="btn-gold">Book Appointment</a>
+        <a href="https://www.google.com/maps/search/Gugush+Hair+Studio+New+York+City" target="_blank" class="btn-text">Get Directions <span>&rarr;</span></a>
       </div>
     </div>
     <div class="c-map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.5!2d-73.99!3d40.75!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1700000000000" allowfullscreen loading="lazy"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96708.34194156103!2d-74.03927096447748!3d40.75904032920752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2588f046ee661%3A0xa0b3281fcecc08c!2sManhattan%2C%20New%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1700000000000" allowfullscreen loading="lazy"></iframe>
     </div>
   </div>
 </section>
 
-<!-- Newsletter -->
-<div class="newsletter fi">
-  <div class="newsletter-inner">
-    <div class="w-line"></div>
-    <h2>Be Part of Our Community</h2>
-    <p>Sign up to hear from us about special events, sales, contests, and beauty tips from our internationally trained stylists.</p>
-    <form class="nl-form" onsubmit="event.preventDefault();this.innerHTML='<p style=\'padding:16px;font-family:var(--serif);font-style:italic;color:var(--gold-dk)\'>Thank you for subscribing!</p>'">
-      <input type="email" placeholder="Enter your email address" required>
-      <button type="submit">Subscribe</button>
-    </form>
-    <p class="nl-social">Follow us on Instagram: <a href="https://www.instagram.com/americahairstyle/" target="_blank">@americahairstyle</a></p>
-  </div>
-</div>
-
 <footer>
   <div class="f-brand">
-    <div class="f-logo">AMERICA <em>Hairstyle</em></div>
-    <div class="f-tagline">International &middot; New York City</div>
+    <div class="f-logo">GUGUSH <em>Hair</em></div>
+    <div class="f-tagline">Hair Studio &middot; New York City</div>
   </div>
   <div class="f-links">
-    <a href="#about">Mission</a>
+    <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#products">Products</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#contact">Contact</a>
+    <a href="#contact">Visit</a>
+    <a href="tel:212-555-0100">Book</a>
   </div>
-  <div class="f-copy">&copy; 2026 America Hairstyle International. All rights reserved.</div>
+  <div class="f-copy">&copy; 2026 Gugush Hair Studio. All rights reserved.</div>
 </footer>
 
 <script>
