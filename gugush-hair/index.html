@@ -2,377 +2,384 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gugush Hair Studio | New York City</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gugush Hair Studio — New York City</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --cream:#FAF7F2;--warm:#F0EBE3;--ivory:#FFFDF8;
-  --gold:#C5A355;--gold-dk:#A8873A;--gold-lt:#D4BA7A;--gold-bg:rgba(197,163,85,.08);
-  --charcoal:#1C1A17;--dark:#2B2620;--mid:#6B6156;--light:#9A9084;--faint:#C5BDB4;
-  --olive:#7A8B5C;--olive-lt:#E8EDE0;
-  --serif:'Playfair Display',Georgia,serif;
-  --display:'Cormorant Garamond',Georgia,serif;
-  --sans:'Jost',-apple-system,sans-serif;
+  --bg:#F7F4F0;--warm:#EDE8E1;--white:#FFFDF9;
+  --charcoal:#1A1714;--dark:#2C2218;--mid:#5A4D40;--light:#8A7D6E;--faint:#B8AFA4;
+  --accent:#8B6F4E;--accent-dk:#6B5238;--accent-lt:#A8926E;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',-apple-system,sans-serif;
 }
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--cream);color:var(--dark);font-size:16px;line-height:1.6;overflow-x:hidden}
-::selection{background:var(--gold);color:#fff}
-img{display:block;max-width:100%}
+body{font-family:var(--sans);background:var(--bg);color:var(--charcoal);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
 
-/* Nav */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 56px;height:72px;display:flex;justify-content:space-between;align-items:center;background:rgba(250,247,242,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.04);transition:box-shadow .4s}
-nav.scrolled{box-shadow:0 2px 24px rgba(0,0,0,.06)}
-.logo{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--charcoal);text-decoration:none;letter-spacing:1px}
-.logo em{font-style:italic;font-weight:400;color:var(--gold)}
-.nav-links{display:flex;gap:36px;list-style:none}
-.nav-links a{font-size:13px;font-weight:400;letter-spacing:2px;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color .3s}
-.nav-links a:hover{color:var(--gold-dk)}
-.nav-right{display:flex;align-items:center;gap:20px}
-.nav-phone{font-size:13px;color:var(--light);text-decoration:none;letter-spacing:.5px;transition:color .3s}
-.nav-phone:hover{color:var(--gold)}
-.nav-cta{font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--ivory);background:var(--gold);padding:12px 30px;text-decoration:none;transition:all .3s}
-.nav-cta:hover{background:var(--gold-dk)}
-.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px}
-.nav-toggle span{display:block;width:22px;height:1.5px;background:var(--charcoal)}
+/* ── Buttons ── */
+.btn-light{
+  display:inline-block;padding:12px 32px;background:var(--bg);color:var(--charcoal);
+  font-family:var(--serif);font-style:italic;font-size:15px;font-weight:400;
+  border-radius:28px;border:none;cursor:pointer;transition:all .3s;
+}
+.btn-light:hover{background:var(--warm)}
+.btn-outline{
+  display:inline-block;padding:12px 32px;background:transparent;color:var(--white);
+  font-family:var(--serif);font-style:italic;font-size:15px;font-weight:400;
+  border-radius:28px;border:1px solid var(--light);cursor:pointer;transition:all .3s;
+}
+.btn-outline:hover{background:rgba(255,255,255,.08)}
+.btn-dark{
+  display:inline-block;padding:12px 32px;background:var(--charcoal);color:var(--white);
+  font-family:var(--serif);font-style:italic;font-size:15px;font-weight:400;
+  border-radius:28px;border:none;cursor:pointer;transition:all .3s;
+}
+.btn-dark:hover{background:var(--dark)}
 
-/* Hero — editorial split */
-.hero{margin-top:72px;display:grid;grid-template-columns:1.1fr 1fr;min-height:88vh;background:var(--ivory)}
-.hero-left{padding:80px 64px;display:flex;flex-direction:column;justify-content:center}
-.hero-tag{font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
-.hero-tag::after{content:'';display:inline-block;width:40px;height:1px;background:var(--gold);vertical-align:middle;margin-left:12px}
-.hero h1{font-family:var(--serif);font-size:clamp(36px,5vw,56px);font-weight:400;font-style:italic;line-height:1.15;color:var(--charcoal);margin-bottom:20px}
-.hero h1 strong{font-weight:700;font-style:normal}
-.hero-desc{font-size:16px;font-weight:300;color:var(--mid);max-width:420px;line-height:1.8;margin-bottom:36px}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-.btn-gold{display:inline-block;padding:16px 40px;font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--ivory);background:var(--gold);text-decoration:none;transition:all .3s}
-.btn-gold:hover{background:var(--gold-dk)}
-.btn-text{font-family:var(--serif);font-size:16px;font-style:italic;color:var(--gold-dk);text-decoration:none;transition:color .3s;padding:16px 8px}
-.btn-text:hover{color:var(--charcoal)}
-.btn-text span{display:inline-block;margin-left:8px;transition:transform .3s}
-.btn-text:hover span{transform:translateX(4px)}
-.hero-rating{margin-top:40px;display:flex;align-items:center;gap:12px}
-.hero-stars{color:var(--gold);font-size:16px;letter-spacing:2px}
-.hero-rating-text{font-size:13px;color:var(--light)}
-.hero-rating-text strong{color:var(--dark);font-weight:500}
-.hero-right{position:relative;overflow:hidden}
-.hero-right img{width:100%;height:100%;object-fit:cover}
-.hero-right-badge{position:absolute;bottom:40px;right:40px;width:120px;height:120px;border-radius:50%;background:var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
-.hero-right-badge .hrb-num{font-family:var(--display);font-size:42px;font-weight:300;color:var(--ivory);line-height:1}
-.hero-right-badge .hrb-text{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.7);margin-top:2px}
+/* ── Navigation ── */
+.nav{
+  position:fixed;top:0;left:0;right:0;height:68px;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;background:rgba(247,244,240,.85);backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(26,23,20,.06);
+}
+.nav-logo{font-family:var(--serif);font-size:22px;font-weight:400;color:var(--charcoal);letter-spacing:.02em}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--mid);transition:color .3s}
+.nav-links a:hover{color:var(--charcoal)}
+.nav-right{display:flex;align-items:center;gap:24px}
+.nav-phone{font-size:13px;color:var(--mid);font-weight:400}
+.nav-cta{
+  padding:10px 28px;background:var(--charcoal);color:var(--white);
+  font-family:var(--serif);font-style:italic;font-size:14px;font-weight:400;
+  border-radius:28px;transition:background .3s;
+}
+.nav-cta:hover{background:var(--dark)}
 
-/* Gold divider bar */
-.gold-bar{height:4px;background:linear-gradient(90deg,var(--gold-lt),var(--gold),var(--gold-lt))}
+/* ── Hero ── */
+.hero{
+  position:relative;width:100%;min-height:100vh;display:flex;align-items:flex-end;
+  background:url('images/hair-dramatic.jpg') center/cover no-repeat;
+}
+.hero::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(26,23,20,.82) 0%,rgba(26,23,20,.35) 50%,rgba(26,23,20,.15) 100%);
+}
+.hero-content{position:relative;z-index:2;padding:0 48px 80px;max-width:720px}
+.hero-badge{
+  display:inline-block;padding:8px 20px;border:1px solid rgba(255,253,249,.35);
+  border-radius:28px;font-size:11px;font-weight:500;text-transform:uppercase;
+  letter-spacing:.14em;color:rgba(255,253,249,.8);margin-bottom:24px;
+}
+.hero h1{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(42px,5.5vw,72px);line-height:1.08;color:var(--white);margin-bottom:20px;
+}
+.hero-sub{font-size:16px;color:rgba(255,253,249,.7);line-height:1.7;margin-bottom:36px;max-width:520px}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
 
-/* Welcome */
-.welcome{background:var(--cream);padding:80px 48px;text-align:center}
-.welcome-inner{max-width:680px;margin:0 auto}
-.w-line{width:48px;height:1px;background:var(--gold);margin:0 auto 20px}
-.welcome h2{font-family:var(--display);font-size:clamp(14px,1.8vw,17px);font-weight:400;letter-spacing:6px;text-transform:uppercase;color:var(--gold-dk);margin-bottom:20px}
-.welcome p{font-family:var(--serif);font-size:clamp(22px,3vw,32px);font-weight:400;font-style:italic;line-height:1.5;color:var(--dark)}
+/* ── Rating Bar ── */
+.rating-bar{
+  background:var(--charcoal);padding:20px 48px;display:flex;align-items:center;
+  gap:16px;flex-wrap:wrap;
+}
+.rating-stars{color:#D4A853;font-size:16px;letter-spacing:2px}
+.rating-text{color:rgba(255,253,249,.85);font-size:14px;font-weight:400}
+.rating-divider{width:1px;height:20px;background:rgba(255,253,249,.15)}
+.rating-info{color:rgba(255,253,249,.55);font-size:13px}
 
-/* About — two columns with image */
-.about{background:var(--ivory);padding:100px 0}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;max-width:1100px;margin:0 auto;padding:0 48px}
-.about-img{position:relative;overflow:hidden}
-.about-img img{width:100%;aspect-ratio:3/4;object-fit:cover;filter:brightness(.92);transition:transform .7s}
-.about-img:hover img{transform:scale(1.02)}
-.about-img::after{content:'';position:absolute;top:16px;left:16px;right:-16px;bottom:-16px;border:1px solid var(--gold-lt);z-index:-1}
-.about-content .s-label{font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
-.about-content h2{font-family:var(--serif);font-size:clamp(28px,3.5vw,42px);font-weight:400;line-height:1.2;color:var(--charcoal);margin-bottom:20px}
-.about-content h2 em{font-style:italic;color:var(--gold-dk)}
-.about-content p{font-size:15px;font-weight:300;color:var(--mid);line-height:1.9;margin-bottom:16px}
+/* ── Section Utilities ── */
+.s-label{
+  font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.14em;
+  color:var(--accent);margin-bottom:12px;
+}
+.s-heading{
+  font-family:var(--serif);font-weight:300;font-size:clamp(30px,3.5vw,44px);
+  line-height:1.15;color:var(--charcoal);margin-bottom:20px;
+}
+.s-text{font-size:15px;color:var(--mid);line-height:1.8;margin-bottom:28px}
 
-/* Services */
-.services{background:var(--cream);padding:100px 0}
-.svc-head{text-align:center;max-width:600px;margin:0 auto 56px;padding:0 48px}
-.s-label{font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
-.s-heading{font-family:var(--serif);font-size:clamp(28px,3.5vw,42px);font-weight:400;font-style:italic;line-height:1.2;color:var(--charcoal)}
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;padding:0 48px}
-.svc-card{background:var(--ivory);border:1px solid rgba(0,0,0,.04);padding:40px 28px;text-align:center;transition:all .3s;position:relative;overflow:hidden}
-.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform .4s;transform-origin:left}
-.svc-card:hover::before{transform:scaleX(1)}
-.svc-card:hover{box-shadow:0 8px 40px rgba(0,0,0,.06);transform:translateY(-3px)}
-.svc-icon{font-size:28px;margin-bottom:20px;color:var(--gold)}
-.svc-card h3{font-family:var(--serif);font-size:22px;font-weight:500;color:var(--charcoal);margin-bottom:10px}
-.svc-card p{font-size:14px;font-weight:300;color:var(--mid);line-height:1.7}
+/* ── About ── */
+.about{background:var(--white);padding:100px 48px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;max-width:1200px;margin:0 auto;align-items:center}
+.about-img{width:100%;height:520px;object-fit:cover;border-radius:0 120px 0 0}
+.about-text{max-width:480px}
 
-/* Products */
-.products{background:var(--ivory);padding:100px 0}
-.prod-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;max-width:1100px;margin:0 auto;padding:0 48px}
-.prod-content .s-label{font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
-.prod-content h2{font-family:var(--serif);font-size:clamp(28px,3.5vw,42px);font-weight:400;line-height:1.2;color:var(--charcoal);margin-bottom:20px}
-.prod-content h2 em{font-style:italic;color:var(--gold-dk)}
-.prod-content p{font-size:15px;font-weight:300;color:var(--mid);line-height:1.9;margin-bottom:16px}
-.prod-list{list-style:none;margin-top:24px;margin-bottom:28px}
-.prod-list li{font-size:14px;font-weight:300;color:var(--mid);padding:10px 0;border-bottom:1px solid rgba(0,0,0,.05);display:flex;align-items:center;gap:12px}
-.prod-list li::before{content:'';display:inline-block;width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0}
-.prod-img{position:relative;overflow:hidden}
-.prod-img img{width:100%;aspect-ratio:3/4;object-fit:cover;filter:brightness(.92);transition:transform .7s}
-.prod-img:hover img{transform:scale(1.02)}
-.prod-img::after{content:'';position:absolute;top:-16px;left:-16px;right:16px;bottom:16px;border:1px solid var(--gold-lt);z-index:-1}
+/* ── Services ── */
+.services{background:var(--bg);padding:100px 48px}
+.services-header{text-align:center;max-width:560px;margin:0 auto 60px}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1200px;margin:0 auto}
+.svc-card{
+  background:var(--white);border-radius:16px;padding:40px 32px;text-align:center;
+  transition:transform .3s,box-shadow .3s;
+}
+.svc-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(26,23,20,.08)}
+.svc-icon{
+  width:56px;height:56px;border-radius:50%;background:var(--warm);
+  display:flex;align-items:center;justify-content:center;margin:0 auto 20px;
+  font-size:22px;
+}
+.svc-card h3{font-family:var(--serif);font-weight:400;font-size:22px;margin-bottom:10px;color:var(--charcoal)}
+.svc-card p{font-size:14px;color:var(--mid);line-height:1.7}
 
-/* Gallery strip */
-.gallery-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;height:300px;overflow:hidden}
-.gs-img{overflow:hidden}
-.gs-img img{width:100%;height:100%;object-fit:cover;filter:brightness(.88) saturate(.85);transition:all .5s}
-.gs-img:hover img{filter:brightness(.96) saturate(.95);transform:scale(1.04)}
+/* ── Ambiance ── */
+.ambiance{display:grid;grid-template-columns:repeat(3,1fr);height:320px}
+.ambiance img{width:100%;height:100%;object-fit:cover}
 
-/* CTA banner */
-.cta-banner{background:var(--charcoal);padding:80px 48px;text-align:center;position:relative;overflow:hidden}
-.cta-banner::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C5A355' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
-.cta-banner h2{font-family:var(--serif);font-size:clamp(26px,3.5vw,40px);font-weight:400;font-style:italic;color:var(--cream);margin-bottom:12px;position:relative}
-.cta-banner p{font-size:15px;font-weight:300;color:var(--faint);margin-bottom:32px;position:relative}
-.cta-banner .btn-gold{position:relative}
+/* ── Why Us ── */
+.why{background:var(--charcoal);padding:100px 48px;color:var(--white)}
+.why-header{text-align:center;max-width:560px;margin:0 auto 60px}
+.why-header .s-label{color:var(--accent-lt)}
+.why-header .s-heading{color:var(--white)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px 64px;max-width:900px;margin:0 auto}
+.why-item .why-num{font-family:var(--serif);font-size:40px;font-weight:300;color:var(--accent-lt);margin-bottom:8px}
+.why-item h3{font-family:var(--serif);font-size:22px;font-weight:400;margin-bottom:10px}
+.why-item p{font-size:14px;color:rgba(255,253,249,.6);line-height:1.7}
 
-/* Contact */
-.contact{background:var(--ivory);padding:100px 0}
-.contact-head{text-align:center;margin-bottom:56px}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;max-width:1100px;margin:0 auto;padding:0 48px}
-.c-block{margin-bottom:28px}
-.c-label{font-size:10px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-.c-val{font-family:var(--display);font-size:22px;font-weight:400;color:var(--charcoal)}
-.c-val a{color:var(--charcoal);text-decoration:none;transition:color .3s}
-.c-val a:hover{color:var(--gold-dk)}
-.c-map{overflow:hidden;min-height:400px;background:var(--warm)}
-.c-map iframe{width:100%;height:100%;min-height:400px;border:0;filter:saturate(.5) contrast(.9) sepia(.15)}
+/* ── Contact ── */
+.contact{background:var(--white);padding:100px 48px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;max-width:1200px;margin:0 auto}
+.c-block{margin-bottom:36px}
+.c-block h3{font-family:var(--serif);font-size:20px;font-weight:400;margin-bottom:8px;color:var(--charcoal)}
+.c-block p{font-size:14px;color:var(--mid);line-height:1.8}
+.c-block a{color:var(--accent);transition:color .3s}
+.c-block a:hover{color:var(--accent-dk)}
+.contact-map{width:100%;height:100%;min-height:340px;border-radius:16px;overflow:hidden;background:var(--warm)}
+.contact-map iframe{width:100%;height:100%;border:0}
 
-/* Footer */
-footer{background:var(--charcoal);padding:48px 56px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:40px}
-.f-brand{display:flex;flex-direction:column;gap:8px}
-.f-logo{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--cream);letter-spacing:1px}
-.f-logo em{font-style:italic;font-weight:400;color:var(--gold)}
-.f-tagline{font-size:12px;font-weight:300;color:var(--faint);letter-spacing:1px}
-.f-links{display:flex;gap:28px}
-.f-links a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--light);text-decoration:none;transition:color .3s}
-.f-links a:hover{color:var(--gold)}
-.f-copy{text-align:right;font-size:11px;color:rgba(255,255,255,.25)}
+/* ── Footer ── */
+.footer{background:var(--warm);padding:60px 48px 40px}
+.footer-inner{display:flex;justify-content:space-between;max-width:1200px;margin:0 auto;gap:48px;flex-wrap:wrap}
+.footer-col h4{font-family:var(--serif);font-size:18px;font-weight:400;margin-bottom:12px;color:var(--charcoal)}
+.footer-col p,.footer-col a{font-size:13px;color:var(--mid);line-height:1.9;display:block}
+.footer-col a:hover{color:var(--charcoal)}
+.footer-bottom{text-align:center;margin-top:40px;padding-top:24px;border-top:1px solid rgba(26,23,20,.08);font-size:12px;color:var(--faint)}
 
-@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-.fi{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
-.fi.vis{opacity:1;transform:translateY(0)}
+/* ── Animations ── */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(28px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.fi{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.fi.visible{opacity:1;transform:translateY(0)}
 
+/* ── Responsive ── */
 @media(max-width:900px){
-  nav{padding:0 20px;height:60px}
-  .nav-links,.nav-phone{display:none}.nav-toggle{display:flex}
-  .nav-links.open{display:flex;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--cream);align-items:center;justify-content:center;gap:24px;z-index:999}
-  .nav-links.open a{font-size:15px;color:var(--charcoal)}
-  .hero{grid-template-columns:1fr;min-height:auto;margin-top:60px}
-  .hero-left{padding:48px 24px;min-height:auto}
-  .hero-right{min-height:50vh}
-  .hero-right-badge{width:90px;height:90px;bottom:24px;right:24px}
-  .hero-right-badge .hrb-num{font-size:30px}
-  .about-grid{grid-template-columns:1fr;gap:40px;padding:0 24px}
-  .about-img::after{display:none}
-  .svc-grid{grid-template-columns:1fr;padding:0 24px}
-  .svc-head{padding:0 24px}
-  .prod-grid{grid-template-columns:1fr;gap:40px;padding:0 24px}
-  .prod-img::after{display:none}
-  .gallery-strip{grid-template-columns:repeat(2,1fr);height:auto}
-  .gs-img{height:200px}
-  .contact-grid{grid-template-columns:1fr;gap:32px;padding:0 24px}
-  .contact-head{padding:0 24px}
-  footer{grid-template-columns:1fr;gap:16px;padding:32px 24px;text-align:center}
-  .f-links{justify-content:center;flex-wrap:wrap}
-  .f-copy{text-align:center}
-  .welcome{padding:56px 24px}
-  .cta-banner{padding:56px 24px}
+  .nav{padding:0 24px}
+  .nav-links{display:none}
+  .hero-content{padding:0 24px 60px}
+  .about{padding:60px 24px}.about-grid{grid-template-columns:1fr;gap:40px}
+  .about-img{height:360px}
+  .services{padding:60px 24px}.svc-grid{grid-template-columns:1fr}
+  .ambiance{grid-template-columns:1fr;height:auto}.ambiance img{height:240px}
+  .why{padding:60px 24px}.why-grid{grid-template-columns:1fr}
+  .contact{padding:60px 24px}.contact-grid{grid-template-columns:1fr}
+  .rating-bar{padding:16px 24px}
+  .footer{padding:40px 24px}
 }
 </style>
 </head>
 <body>
 
-<nav id="nav">
-  <a href="#" class="logo">GUGUSH <em>Hair</em></a>
-  <ul class="nav-links" id="nL">
-    <li><a href="#about" onclick="cN()">About</a></li>
-    <li><a href="#services" onclick="cN()">Services</a></li>
-    <li><a href="#products" onclick="cN()">Products</a></li>
-    <li><a href="#contact" onclick="cN()">Visit</a></li>
+<!-- ── Nav ── -->
+<nav class="nav">
+  <a href="#" class="nav-logo">Gugush Hair Studio</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-right">
-    <a href="tel:212-555-0100" class="nav-phone">(212) 555-0100</a>
-    <a href="tel:212-555-0100" class="nav-cta">Book Now</a>
+    <a href="tel:+12125551234" class="nav-phone">(212) 555-1234</a>
+    <a href="#contact" class="nav-cta">Book Now</a>
   </div>
-  <button class="nav-toggle" onclick="tN()"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- Hero -->
+<!-- ── Hero ── -->
 <section class="hero">
-  <div class="hero-left" style="animation:fadeUp .9s ease-out">
-    <p class="hero-tag">New York City</p>
-    <h1>Are You Ready for<br><strong>a New &amp; Better</strong> <em>You?</em></h1>
-    <p class="hero-desc">Welcome to Gugush Hair Studio &mdash; where artistry meets expertise. Discover your most beautiful self with our master stylists and premium smoothing treatments.</p>
-    <div class="hero-actions">
-      <a href="tel:212-555-0100" class="btn-gold">Book Appointment</a>
-      <a href="#services" class="btn-text">View Services <span>&rarr;</span></a>
-    </div>
-    <div class="hero-rating">
-      <div class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div class="hero-rating-text"><strong>5.0</strong> &middot; Trusted by NYC Clients</div>
-    </div>
-  </div>
-  <div class="hero-right">
-    <img src="images/hair-dramatic.jpg" alt="Beautiful hair styling at Gugush Hair Studio">
-    <div class="hero-right-badge">
-      <div class="hrb-num">NYC</div>
-      <div class="hrb-text">Hair Studio</div>
+  <div class="hero-content">
+    <span class="hero-badge">New York City Hair Studio</span>
+    <h1>Are You Ready For<br>A New And Better You?</h1>
+    <p class="hero-sub">Specializing in Brazilian Blowout, keratin treatments, and smoothing systems — Gugush Hair Studio transforms your hair into its most beautiful, healthy expression.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-light">Book a Consultation</a>
+      <a href="#services" class="btn-outline">View Services</a>
     </div>
   </div>
 </section>
 
-<div class="gold-bar"></div>
-
-<!-- Welcome -->
-<div class="welcome fi">
-  <div class="welcome-inner">
-    <div class="w-line"></div>
-    <h2>Welcome to Gugush Hair Studio</h2>
-    <p>Are you ready for a new and better you? Our master stylists bring decades of expertise to every cut, color, and smoothing treatment &mdash; creating looks that turn heads.</p>
-  </div>
+<!-- ── Rating Bar ── -->
+<div class="rating-bar">
+  <span class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+  <span class="rating-text">5.0 Rated by Our Clients</span>
+  <span class="rating-divider"></span>
+  <span class="rating-info">Brazilian Blowout &amp; Keratin Specialists in NYC</span>
 </div>
 
-<!-- About -->
-<section class="about" id="about">
-  <div class="about-grid fi">
-    <div class="about-img">
-      <img src="images/fresh-hair.jpg" alt="Fresh hair styling">
-    </div>
-    <div class="about-content">
-      <p class="s-label">About Gugush Hair Studio</p>
-      <h2>A Legacy of <em>Hair Artistry</em></h2>
-      <p>Gugush Hair Studio has built a reputation as one of New York City's premier salons. Founded on a passion for hair artistry and a commitment to excellence, our studio has been transforming clients and boosting confidence for years.</p>
-      <p>Our team of master stylists brings a wealth of experience in precision cutting, advanced color techniques, and the latest smoothing systems. From Brazilian Blowouts to bespoke keratin treatments, we specialize in delivering salon-perfect results that last.</p>
-      <p>Every visit to Gugush is an experience &mdash; from the moment you step through our doors, you'll feel the difference that true craftsmanship makes.</p>
-      <a href="tel:212-555-0100" class="btn-gold" style="margin-top:28px;display:inline-block">Make Appointment</a>
+<!-- ── About ── -->
+<section id="about" class="about">
+  <div class="about-grid">
+    <img src="images/fresh-hair.jpg" alt="Fresh styled hair at Gugush Hair Studio" class="about-img fi">
+    <div class="about-text fi">
+      <p class="s-label">Our Story</p>
+      <h2 class="s-heading">Where Artistry Meets<br>Hair Science</h2>
+      <p class="s-text">At Gugush Hair Studio, we believe beautiful hair begins with expert care. Our New York City studio is renowned for Brazilian Blowout and keratin treatments that deliver smooth, frizz-free results lasting for months. Every client receives a personalized consultation to find the perfect treatment for their hair type and lifestyle.</p>
+      <a href="#contact" class="btn-dark">Discover Our Approach</a>
     </div>
   </div>
 </section>
 
-<!-- Services -->
-<section class="services" id="services">
-  <div class="svc-head fi">
+<!-- ── Services ── -->
+<section id="services" class="services">
+  <div class="services-header fi">
     <p class="s-label">What We Offer</p>
-    <h2 class="s-heading">Services &amp; Expertise</h2>
+    <h2 class="s-heading">Signature Services</h2>
+    <p class="s-text">From precision cuts to transformative smoothing treatments, every service is tailored to reveal your hair's full potential.</p>
   </div>
-  <div class="svc-grid fi">
-    <div class="svc-card">
+  <div class="svc-grid">
+    <div class="svc-card fi">
       <div class="svc-icon">&#9986;</div>
-      <h3>Precision Cuts</h3>
-      <p>Expert cuts for men and women tailored to your face shape, hair texture, and lifestyle. From classic bobs to modern layers.</p>
+      <h3>Haircuts &amp; Styling</h3>
+      <p>Precision cuts and expert styling customized for your face shape, texture, and personal aesthetic.</p>
     </div>
-    <div class="svc-card">
+    <div class="svc-card fi">
       <div class="svc-icon">&#9672;</div>
-      <h3>Color &amp; Highlights</h3>
-      <p>Full color, balayage, ombr&eacute;, highlights and dimensional color. Premium products for rich, long-lasting vibrancy.</p>
-    </div>
-    <div class="svc-card">
-      <div class="svc-icon">&#10023;</div>
       <h3>Brazilian Blowout</h3>
-      <p>Our signature smoothing treatment that eliminates frizz, reduces styling time, and delivers incredible shine for up to 12 weeks.</p>
+      <p>Our signature smoothing treatment that eliminates frizz and delivers silky, manageable hair for up to 12 weeks.</p>
     </div>
-    <div class="svc-card">
-      <div class="svc-icon">&#8766;</div>
-      <h3>Keratin Treatments</h3>
-      <p>Professional keratin smoothing systems that restore manageability, tame unruly hair, and protect against humidity and damage.</p>
+    <div class="svc-card fi">
+      <div class="svc-icon">&#10024;</div>
+      <h3>Keratin Treatment</h3>
+      <p>Advanced keratin systems that strengthen and smooth your hair while restoring natural shine and health.</p>
     </div>
-    <div class="svc-card">
-      <div class="svc-icon">&#10029;</div>
-      <h3>Blowouts &amp; Styling</h3>
-      <p>Silk press, blowouts, updos, and special occasion styling. Leave the studio feeling polished and camera-ready.</p>
+    <div class="svc-card fi">
+      <div class="svc-icon">&#127912;</div>
+      <h3>Color Services</h3>
+      <p>Full color, highlights, balayage, and corrective color — crafted with precision and premium products.</p>
     </div>
-    <div class="svc-card">
-      <div class="svc-icon">&#9740;</div>
+    <div class="svc-card fi">
+      <div class="svc-icon">&#128167;</div>
       <h3>Deep Conditioning</h3>
-      <p>Restorative treatments to repair damage, add moisture, and bring your hair back to life with professional-grade formulas.</p>
+      <p>Intensive repair treatments that restore moisture, elasticity, and vitality to damaged or dry hair.</p>
+    </div>
+    <div class="svc-card fi">
+      <div class="svc-icon">&#9733;</div>
+      <h3>Smoothing Systems</h3>
+      <p>Customized smoothing solutions for every hair type — from gentle relaxing to full transformation.</p>
     </div>
   </div>
 </section>
 
-<!-- Products -->
-<section class="products" id="products">
-  <div class="prod-grid fi">
-    <div class="prod-content">
-      <p class="s-label">Products &amp; Smoothing Systems</p>
-      <h2>Professional-Grade <em>Hair Care</em></h2>
-      <p>At Gugush Hair Studio, we use and recommend only the finest professional products and smoothing systems. Our stylists are certified in the latest treatment technologies to deliver transformative results.</p>
-      <ul class="prod-list">
-        <li>Brazilian Blowout Professional Smoothing Solutions</li>
-        <li>Keratin Complex Smoothing Therapy</li>
-        <li>Professional Color Lines &amp; Toners</li>
-        <li>Deep Conditioning &amp; Repair Treatments</li>
-        <li>Take-Home Maintenance Products</li>
-      </ul>
-      <a href="tel:212-555-0100" class="btn-gold">Ask About Products</a>
+<!-- ── Ambiance ── -->
+<section class="ambiance">
+  <img src="images/salon-products.jpg" alt="Premium salon products at Gugush Hair Studio">
+  <img src="images/hairbrush.jpg" alt="Professional styling tools">
+  <img src="images/product-minimal.jpg" alt="Minimal hair care products">
+</section>
+
+<!-- ── Why Us ── -->
+<section id="why" class="why">
+  <div class="why-header fi">
+    <p class="s-label">Why Gugush</p>
+    <h2 class="s-heading">What Sets Us Apart</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-item fi">
+      <div class="why-num">01</div>
+      <h3>Smoothing Specialists</h3>
+      <p>We are recognized experts in Brazilian Blowout and keratin treatments, with years of advanced training and thousands of satisfied clients.</p>
     </div>
-    <div class="prod-img">
-      <img src="images/salon-products.jpg" alt="Professional salon products">
+    <div class="why-item fi">
+      <div class="why-num">02</div>
+      <h3>Premium Products Only</h3>
+      <p>We use only the highest-quality, salon-grade products to ensure your hair receives the best possible care and long-lasting results.</p>
+    </div>
+    <div class="why-item fi">
+      <div class="why-num">03</div>
+      <h3>Personalized Consultations</h3>
+      <p>Every visit begins with a thorough consultation to understand your hair goals, texture, and history before recommending any treatment.</p>
+    </div>
+    <div class="why-item fi">
+      <div class="why-num">04</div>
+      <h3>Heart of New York City</h3>
+      <p>Conveniently located in NYC, our studio offers a refined, welcoming atmosphere where you can relax and enjoy a transformative experience.</p>
     </div>
   </div>
 </section>
 
-<!-- Gallery strip -->
-<div class="gallery-strip">
-  <div class="gs-img"><img src="images/hair-dramatic.jpg" alt="Dramatic hair styling"></div>
-  <div class="gs-img"><img src="images/hair-windswept.jpg" alt="Beautiful windswept hair"></div>
-  <div class="gs-img"><img src="images/hairbrush.jpg" alt="Professional styling tools"></div>
-  <div class="gs-img"><img src="images/product-minimal.jpg" alt="Hair care products"></div>
-</div>
-
-<!-- CTA Banner -->
-<div class="cta-banner">
-  <h2>Ready for a New Signature Look?</h2>
-  <p>Book your appointment now and let our master stylists transform your hair.</p>
-  <a href="tel:212-555-0100" class="btn-gold">Book Your Appointment</a>
-</div>
-
-<!-- Contact -->
-<section class="contact" id="contact">
-  <div class="contact-head fi">
-    <p class="s-label">Visit Us</p>
-    <h2 class="s-heading">Get in Touch</h2>
-  </div>
-  <div class="contact-grid fi">
-    <div>
-      <div class="c-block"><div class="c-label">Location</div><div class="c-val"><a href="https://www.google.com/maps/search/Gugush+Hair+Studio+New+York+City" target="_blank">New York City</a></div></div>
-      <div class="c-block"><div class="c-label">Phone</div><div class="c-val"><a href="tel:212-555-0100">(212) 555-0100</a></div></div>
-      <div class="c-block"><div class="c-label">Follow Us</div><div class="c-val" style="font-size:18px;display:flex;gap:16px;align-items:center"><a href="#" title="Instagram" style="color:var(--gold);font-size:14px;letter-spacing:2px;text-transform:uppercase;font-family:var(--sans);font-weight:400">Instagram</a></div></div>
-      <div class="c-block"><div class="c-label">Hours</div><div class="c-val" style="font-size:18px">Open Daily &middot; By Appointment</div></div>
-      <div style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap">
-        <a href="tel:212-555-0100" class="btn-gold">Book Appointment</a>
-        <a href="https://www.google.com/maps/search/Gugush+Hair+Studio+New+York+City" target="_blank" class="btn-text">Get Directions <span>&rarr;</span></a>
+<!-- ── Contact ── -->
+<section id="contact" class="contact">
+  <div class="contact-grid">
+    <div class="fi">
+      <p class="s-label">Get In Touch</p>
+      <h2 class="s-heading">Book Your<br>Appointment</h2>
+      <p class="s-text">Ready for smooth, beautiful hair? Reach out to schedule your consultation at Gugush Hair Studio.</p>
+      <div class="c-block">
+        <h3>Location</h3>
+        <p>New York City, NY</p>
+      </div>
+      <div class="c-block">
+        <h3>Phone</h3>
+        <p><a href="tel:+12125551234">(212) 555-1234</a></p>
+      </div>
+      <div class="c-block">
+        <h3>Follow Us</h3>
+        <p><a href="https://www.instagram.com/gugushhair/" target="_blank" rel="noopener">@gugushhair on Instagram</a></p>
+      </div>
+      <div class="c-block">
+        <h3>Hours</h3>
+        <p>Tuesday – Saturday: 10am – 7pm<br>Sunday – Monday: Closed</p>
       </div>
     </div>
-    <div class="c-map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96708.34194156103!2d-74.03927096447748!3d40.75904032920752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2588f046ee661%3A0xa0b3281fcecc08c!2sManhattan%2C%20New%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1700000000000" allowfullscreen loading="lazy"></iframe>
+    <div class="contact-map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.11976397304903!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1700000000000" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="f-brand">
-    <div class="f-logo">GUGUSH <em>Hair</em></div>
-    <div class="f-tagline">Hair Studio &middot; New York City</div>
+<!-- ── Footer ── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>Gugush Hair Studio</h4>
+      <p>Specializing in Brazilian Blowout, keratin treatments, and smoothing systems in the heart of New York City.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>New York City, NY</p>
+      <a href="tel:+12125551234">(212) 555-1234</a>
+      <a href="https://www.instagram.com/gugushhair/" target="_blank" rel="noopener">Instagram</a>
+    </div>
   </div>
-  <div class="f-links">
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#products">Products</a>
-    <a href="#contact">Visit</a>
-    <a href="tel:212-555-0100">Book</a>
+  <div class="footer-bottom">
+    &copy; 2026 Gugush Hair Studio. All rights reserved.
   </div>
-  <div class="f-copy">&copy; 2026 Gugush Hair Studio. All rights reserved.</div>
 </footer>
 
+<!-- ── Fade-in Observer ── -->
 <script>
-const nb=document.getElementById('nav');
-window.addEventListener('scroll',()=>nb.classList.toggle('scrolled',window.scrollY>60));
-function tN(){document.getElementById('nL').classList.toggle('open')}
-function cN(){document.getElementById('nL').classList.remove('open')}
-const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:.1});
-document.querySelectorAll('.fi').forEach(el=>io.observe(el));
+document.addEventListener('DOMContentLoaded',function(){
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}
+    });
+  },{threshold:0.15});
+  document.querySelectorAll('.fi').forEach(function(el){obs.observe(el)});
+});
 </script>
+
 </body>
 </html>
