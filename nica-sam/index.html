@@ -36,28 +36,33 @@ nav.scrolled{box-shadow:0 1px 20px rgba(0,0,0,.06)}
 .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px}
 .nav-toggle span{display:block;width:22px;height:1.5px;background:var(--dark);border-radius:1px}
 
-/* Hero */
-.hero{margin-top:68px;min-height:92vh;display:flex;align-items:flex-end;position:relative;background:var(--charcoal);overflow:hidden}
-.hero-bg{position:absolute;inset:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.45;filter:brightness(.7) saturate(.7)}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,23,20,.85) 0%,rgba(26,23,20,.2) 50%,rgba(26,23,20,.1) 100%)}
-.hero-content{position:relative;z-index:2;padding:0 64px 80px;max-width:700px;animation:fadeUp .9s ease-out}
-.hero-badge{display:inline-block;font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent-lt);border:1px solid rgba(168,146,110,.3);padding:8px 20px;border-radius:20px;margin-bottom:24px}
-.hero h1{font-family:var(--serif);font-size:clamp(42px,6vw,72px);font-weight:300;line-height:1.05;color:var(--bg);margin-bottom:16px;letter-spacing:-.5px}
+/* Hero — split */
+.hero{margin-top:68px;display:grid;grid-template-columns:1fr 1fr;min-height:92vh}
+.hero-left{position:relative;background:var(--charcoal);overflow:hidden}
+.hero-left img{width:100%;height:100%;object-fit:cover;opacity:.7}
+.hero-left-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,23,20,.8) 0%,rgba(26,23,20,.15) 50%)}
+.hero-left-content{position:absolute;bottom:0;left:0;right:0;padding:56px;z-index:2;animation:fadeUp .9s ease-out}
+.hero-badge{display:inline-block;font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent-lt);border:1px solid rgba(168,146,110,.3);padding:7px 18px;border-radius:20px;margin-bottom:20px}
+.hero h1{font-family:var(--serif);font-size:clamp(40px,5.5vw,68px);font-weight:300;line-height:1.05;color:var(--bg);margin-bottom:14px;letter-spacing:-.5px}
 .hero h1 em{font-style:italic;font-weight:300;color:var(--accent-lt)}
-.hero-sub{font-size:15px;color:rgba(247,244,240,.5);max-width:420px;line-height:1.8;margin-bottom:32px}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
-.btn-light{display:inline-block;padding:14px 36px;font-family:var(--serif);font-size:15px;font-style:italic;color:var(--charcoal);background:var(--bg);border-radius:28px;text-decoration:none;transition:all .3s}
+.hero-sub{font-size:15px;color:rgba(247,244,240,.5);max-width:380px;line-height:1.8;margin-bottom:28px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn-light{display:inline-block;padding:14px 34px;font-family:var(--serif);font-size:15px;font-style:italic;color:var(--charcoal);background:var(--bg);border-radius:28px;text-decoration:none;transition:all .3s}
 .btn-light:hover{background:#fff}
-.btn-outline{display:inline-block;padding:14px 36px;font-family:var(--serif);font-size:15px;font-style:italic;color:var(--bg);border:1px solid rgba(247,244,240,.2);border-radius:28px;text-decoration:none;transition:all .3s}
+.btn-outline{display:inline-block;padding:14px 34px;font-family:var(--serif);font-size:15px;font-style:italic;color:var(--bg);border:1px solid rgba(247,244,240,.2);border-radius:28px;text-decoration:none;transition:all .3s}
 .btn-outline:hover{border-color:rgba(247,244,240,.5);background:rgba(247,244,240,.06)}
+.hero-right{position:relative;overflow:hidden}
+.hero-right img{width:100%;height:100%;object-fit:cover;filter:grayscale(.2)}
+.hero-right-text{position:absolute;bottom:56px;right:56px;text-align:right}
+.hero-big{font-family:var(--serif);font-size:clamp(48px,7vw,96px);font-weight:300;font-style:italic;line-height:.92;color:var(--white);letter-spacing:1px;text-shadow:0 2px 40px rgba(0,0,0,.3)}
+.hero-accent{font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:16px}
 
 /* Rating bar */
-.rating-bar{background:var(--charcoal);padding:24px 64px;display:flex;align-items:center;gap:40px;flex-wrap:wrap}
-.rb-stars{color:#E2B94A;font-size:20px;letter-spacing:2px}
+.rating-bar{background:var(--charcoal);padding:22px 56px;display:flex;align-items:center;gap:36px;flex-wrap:wrap}
+.rb-stars{color:#E2B94A;font-size:18px;letter-spacing:2px}
 .rb-text{font-size:13px;color:var(--faint)}
 .rb-text strong{color:var(--bg);font-weight:600}
-.rb-divider{width:1px;height:28px;background:rgba(255,255,255,.1)}
+.rb-divider{width:1px;height:24px;background:rgba(255,255,255,.1)}
 .rb-info{font-size:13px;color:var(--faint)}
 .rb-info a{color:var(--accent-lt);text-decoration:none}
 
@@ -72,10 +77,10 @@ section{padding:100px 0}
 /* About */
 .about{background:var(--white)}
 .about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:72px;align-items:center}
-.about-img{border-radius:0 120px 0 0;overflow:hidden;aspect-ratio:4/5}
-.about-img img{width:100%;height:100%;object-fit:cover;filter:brightness(.9) saturate(.85);transition:transform .7s}
+.about-img{border-radius:0 120px 0 0;overflow:hidden;aspect-ratio:3/4}
+.about-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
 .about-img:hover img{transform:scale(1.03)}
-.btn-dark{display:inline-block;padding:14px 36px;font-family:var(--serif);font-size:15px;font-style:italic;color:var(--white);background:var(--charcoal);border-radius:28px;text-decoration:none;transition:all .3s;margin-top:28px}
+.btn-dark{display:inline-block;padding:14px 34px;font-family:var(--serif);font-size:15px;font-style:italic;color:var(--white);background:var(--charcoal);border-radius:28px;text-decoration:none;transition:all .3s;margin-top:28px}
 .btn-dark:hover{background:var(--accent-dk)}
 
 /* Services */
@@ -88,10 +93,10 @@ section{padding:100px 0}
 .svc-card p{font-size:14px;color:var(--mid);line-height:1.7}
 
 /* Ambiance */
-.ambiance{display:grid;grid-template-columns:repeat(3,1fr);height:320px;gap:0;overflow:hidden}
+.ambiance{display:grid;grid-template-columns:repeat(4,1fr);height:320px;gap:0;overflow:hidden}
 .amb-img{overflow:hidden}
-.amb-img img{width:100%;height:100%;object-fit:cover;filter:brightness(.85) saturate(.8);transition:all .5s}
-.amb-img:hover img{filter:brightness(.95) saturate(.9);transform:scale(1.03)}
+.amb-img img{width:100%;height:100%;object-fit:cover;filter:brightness(.88) saturate(.85);transition:all .5s}
+.amb-img:hover img{filter:brightness(.95) saturate(.95);transform:scale(1.03)}
 
 /* Why us */
 .why{background:var(--charcoal);color:var(--bg);position:relative;overflow:hidden}
@@ -126,29 +131,32 @@ footer{background:var(--warm);padding:32px 48px;display:flex;justify-content:spa
 .f-links a:hover{color:var(--accent)}
 .f-copy{font-size:11px;color:var(--light)}
 
-/* Animations */
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 .fi{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .fi.vis{opacity:1;transform:translateY(0)}
 
-/* Mobile */
 @media(max-width:900px){
   nav{padding:0 20px;height:60px}
   .nav-links,.nav-phone{display:none}.nav-toggle{display:flex}
   .nav-links.open{display:flex;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);align-items:center;justify-content:center;gap:24px;z-index:999}
   .nav-links.open a{font-size:15px;color:var(--dark)}
   .wrap{padding:0 20px}section{padding:64px 0}
-  .hero{min-height:80vh;margin-top:60px}
-  .hero-content{padding:0 24px 56px}
+  .hero{grid-template-columns:1fr;min-height:auto;margin-top:60px}
+  .hero-left{min-height:70vh}.hero-right{min-height:50vh}
+  .hero-left-content{padding:32px 24px}
+  .hero-right-text{bottom:28px;right:24px}
   .rating-bar{padding:20px 24px;gap:20px}
   .about-grid{grid-template-columns:1fr;gap:40px}
   .svc-grid{grid-template-columns:1fr}
-  .ambiance{grid-template-columns:1fr;height:auto}
-  .amb-img{height:240px}
+  .ambiance{grid-template-columns:repeat(2,1fr);height:auto}.amb-img{height:200px}
   .why-grid{grid-template-columns:1fr}
   .contact-grid{grid-template-columns:1fr;gap:32px}
   footer{flex-direction:column;gap:12px;text-align:center;padding:24px 20px}
   .f-links{flex-wrap:wrap;justify-content:center}
+}
+@media(max-width:480px){
+  .hero-left{min-height:60vh}.hero-right{min-height:40vh}
+  .hero-big{font-size:48px}
 }
 </style>
 </head>
@@ -168,17 +176,26 @@ footer{background:var(--warm);padding:32px 48px;display:flex;justify-content:spa
   <button class="nav-toggle" onclick="tN()"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- Hero -->
+<!-- Hero split -->
 <section class="hero">
-  <div class="hero-bg"><img src="images/hero-glow.jpg" alt="Nica & Sam Hair Salon"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="hero-badge">Midtown West &middot; 875 8th Ave</div>
-    <h1>Nica <em>&amp; Sam</em><br>Hair Salon</h1>
-    <p class="hero-sub">Your neighborhood salon in the heart of Midtown Manhattan. Expert cuts, color, and styling for every occasion.</p>
-    <div class="hero-actions">
-      <a href="tel:646-484-6538" class="btn-light">Book Appointment</a>
-      <a href="#services" class="btn-outline">Our Services</a>
+  <div class="hero-left">
+    <img src="images/hero-hair-bw.jpg" alt="Hair styling">
+    <div class="hero-left-overlay"></div>
+    <div class="hero-left-content">
+      <div class="hero-badge">Midtown West &middot; 875 8th Ave</div>
+      <h1>Nica <em>&amp; Sam</em><br>Hair Salon</h1>
+      <p class="hero-sub">Your neighborhood salon in the heart of Midtown Manhattan. Expert cuts, color, and styling for every occasion.</p>
+      <div class="hero-actions">
+        <a href="tel:646-484-6538" class="btn-light">Book Appointment</a>
+        <a href="#services" class="btn-outline">Our Services</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="images/windswept-hair-bw.jpg" alt="Beautiful hair">
+    <div class="hero-right-text">
+      <div class="hero-big">your<br>hair,<br>elevated.</div>
+      <div class="hero-accent">since day one</div>
     </div>
   </div>
 </section>
@@ -196,12 +213,12 @@ footer{background:var(--warm);padding:32px 48px;display:flex;justify-content:spa
   <div class="wrap">
     <div class="about-grid fi">
       <div class="about-img">
-        <img src="images/warm-ambiance.jpg" alt="Salon interior">
+        <img src="images/fresh-wet-hair.jpg" alt="Fresh hair styling">
       </div>
       <div>
         <p class="s-label">About Us</p>
         <h2 class="s-heading">Where Style Meets <em>Confidence</em></h2>
-        <p class="s-text">Nica & Sam Hair Salon has been a trusted name in Midtown West for years. Our talented stylists bring passion and precision to every client, whether you're looking for a fresh cut, a bold new color, or a special-occasion style.</p>
+        <p class="s-text">Nica &amp; Sam Hair Salon has been a trusted name in Midtown West for years. Our talented stylists bring passion and precision to every client, whether you're looking for a fresh cut, a bold new color, or a special-occasion style.</p>
         <p class="s-text" style="margin-top:16px">Located at 875 8th Avenue, we're easy to find and always welcoming. Come experience why 645+ clients have rated us 4.8 stars.</p>
         <a href="tel:646-484-6538" class="btn-dark">Make Appointment</a>
       </div>
@@ -253,9 +270,10 @@ footer{background:var(--warm);padding:32px 48px;display:flex;justify-content:spa
 
 <!-- Ambiance -->
 <div class="ambiance">
-  <div class="amb-img"><img src="images/products-minimal.jpg" alt="Salon products"></div>
+  <div class="amb-img"><img src="images/wooden-hairbrush.jpg" alt="Hair brush"></div>
+  <div class="amb-img"><img src="images/towel-product-tulips.jpg" alt="Salon products"></div>
+  <div class="amb-img"><img src="images/minimal-product.jpg" alt="Hair care"></div>
   <div class="amb-img"><img src="images/warm-tools.jpg" alt="Salon tools"></div>
-  <div class="amb-img"><img src="images/clean-detail.jpg" alt="Salon detail"></div>
 </div>
 
 <!-- Why us -->
@@ -308,7 +326,7 @@ footer{background:var(--warm);padding:32px 48px;display:flex;justify-content:spa
         </div>
       </div>
       <div class="c-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.0!2d-73.9862!3d40.7636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s875%208th%20Ave%2C%20New%20York%2C%20NY%2010019!5e0!3m2!1sen!2sus!4v1700000000000" allowfullscreen loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.0!2d-73.9862!3d40.7636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2585390098a6d%3A0x1c3b2c3d4e5f6a7b!2s875%208th%20Ave%2C%20New%20York%2C%20NY%2010019!5e0!3m2!1sen!2sus!4v1700000000000" allowfullscreen loading="lazy"></iframe>
       </div>
     </div>
   </div>
