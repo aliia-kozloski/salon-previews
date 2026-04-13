@@ -36,12 +36,12 @@ nav.scrolled{box-shadow:0 1px 20px rgba(0,0,0,.06)}
 .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px}
 .nav-toggle span{display:block;width:22px;height:1.5px;background:var(--dark);border-radius:1px}
 
-/* Hero */
-.hero{margin-top:68px;min-height:92vh;display:flex;align-items:flex-end;position:relative;background:var(--charcoal);overflow:hidden}
-.hero-bg{position:absolute;inset:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.45;filter:brightness(.7) saturate(.7)}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,23,20,.85) 0%,rgba(26,23,20,.2) 50%,rgba(26,23,20,.1) 100%)}
-.hero-content{position:relative;z-index:2;padding:0 64px 80px;max-width:700px;animation:fadeUp .9s ease-out}
+/* Hero — split */
+.hero{margin-top:68px;display:grid;grid-template-columns:1fr 1fr;min-height:92vh}
+.hero-img{position:relative;overflow:hidden}
+.hero-img img{width:100%;height:100%;object-fit:cover;filter:brightness(.85) saturate(.85)}
+.hero-text{background:var(--charcoal);display:flex;flex-direction:column;justify-content:center;padding:64px}
+.hero-content{max-width:520px;animation:fadeUp .9s ease-out}
 .hero-badge{display:inline-block;font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent-lt);border:1px solid rgba(168,146,110,.3);padding:8px 20px;border-radius:20px;margin-bottom:24px}
 .hero h1{font-family:var(--serif);font-size:clamp(42px,6vw,72px);font-weight:300;line-height:1.05;color:var(--bg);margin-bottom:16px;letter-spacing:-.5px}
 .hero h1 em{font-style:italic;font-weight:300;color:var(--accent-lt)}
@@ -138,8 +138,7 @@ footer{background:var(--warm);padding:32px 48px;display:flex;justify-content:spa
   .nav-links.open{display:flex;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);align-items:center;justify-content:center;gap:24px;z-index:999}
   .nav-links.open a{font-size:15px;color:var(--dark)}
   .wrap{padding:0 20px}section{padding:64px 0}
-  .hero{min-height:80vh;margin-top:60px}
-  .hero-content{padding:0 24px 56px}
+  .hero{grid-template-columns:1fr;min-height:auto;margin-top:60px}.hero-img{min-height:50vh}.hero-text{padding:40px 24px}
   .rating-bar{padding:20px 24px;gap:20px}
   .about-grid{grid-template-columns:1fr;gap:40px}
   .svc-grid{grid-template-columns:1fr}
@@ -170,15 +169,16 @@ footer{background:var(--warm);padding:32px 48px;display:flex;justify-content:spa
 
 <!-- Hero -->
 <section class="hero">
-  <div class="hero-bg"><img src="images/hero-glow.jpg" alt="Nica & Sam Hair Salon"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="hero-badge">Midtown West &middot; 875 8th Ave</div>
-    <h1>Nica <em>&amp; Sam</em><br>Hair Salon</h1>
-    <p class="hero-sub">Your neighborhood salon in the heart of Midtown Manhattan. Expert cuts, color, and styling for every occasion.</p>
-    <div class="hero-actions">
+  <div class="hero-img"><img src="images/hero-glow.jpg" alt="Salon"></div>
+  <div class="hero-text">
+    <div class="hero-content">
+      <div class="hero-badge">Midtown West &middot; 875 8th Ave</div>
+      <h1>Nica <em>&amp; Sam</em><br>Hair Salon</h1>
+      <p class="hero-sub">Your neighborhood salon in the heart of Midtown Manhattan. Expert cuts, color, and styling for every occasion.</p>
+      <div class="hero-actions">
       <a href="tel:646-484-6538" class="btn-light">Book Appointment</a>
       <a href="#services" class="btn-outline">Our Services</a>
+    </div>
     </div>
   </div>
 </section>
