@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>America Hairstyle International | NYC Hair Salon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --cream:#FAF7F2;--warm:#F0EAE0;--tan:#E8DFD2;--ivory:#FFFDF8;
+  --gold:#C5A355;--gold-dk:#A8873A;--gold-lt:#D4BA7A;
+  --charcoal:#1C1A17;--dark:#2B2620;--mid:#6B6156;--light:#9A9084;--faint:#C5BDB4;
+  --serif:'Playfair Display',Georgia,serif;
+  --display:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost',-apple-system,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--dark);font-size:16px;line-height:1.6;overflow-x:hidden}
+::selection{background:var(--gold);color:#fff}
+img{display:block;max-width:100%}
+
+/* Nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 56px;height:72px;display:flex;justify-content:space-between;align-items:center;background:rgba(250,247,242,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.04);transition:box-shadow .4s}
+nav.scrolled{box-shadow:0 2px 24px rgba(0,0,0,.06)}
+.logo{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--charcoal);text-decoration:none;letter-spacing:2px;text-transform:uppercase}
+.logo em{font-style:italic;font-weight:400;color:var(--gold);text-transform:none;font-size:20px}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-size:12px;font-weight:400;letter-spacing:2px;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color .3s}
+.nav-links a:hover{color:var(--gold-dk)}
+.nav-right{display:flex;align-items:center;gap:20px}
+.nav-phone{font-size:13px;color:var(--light);text-decoration:none;letter-spacing:.5px;transition:color .3s}
+.nav-phone:hover{color:var(--gold)}
+.nav-cta{font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--ivory);background:var(--gold);padding:12px 30px;text-decoration:none;transition:all .3s}
+.nav-cta:hover{background:var(--gold-dk)}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px}
+.nav-toggle span{display:block;width:22px;height:1.5px;background:var(--charcoal)}
+
+/* Hero — warm tan bg with overlay text */
+.hero{margin-top:72px;display:grid;grid-template-columns:1.2fr 1fr;min-height:88vh}
+.hero-img{position:relative;overflow:hidden}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+.hero-right{background:var(--tan);display:flex;flex-direction:column;justify-content:center;padding:64px;position:relative}
+.hero-welcome{font-size:11px;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--gold-dk);margin-bottom:20px}
+.hero-right h1{font-family:var(--serif);font-size:clamp(36px,4.5vw,56px);font-weight:400;font-style:italic;line-height:1.12;color:var(--charcoal);margin-bottom:20px}
+.hero-right h1 strong{font-weight:700;font-style:normal;display:block;font-size:clamp(14px,1.5vw,18px);letter-spacing:4px;text-transform:uppercase;font-family:var(--sans);color:var(--mid);margin-bottom:8px}
+.hero-desc{font-size:15px;font-weight:300;color:var(--mid);max-width:380px;line-height:1.8;margin-bottom:32px}
+.btn-gold{display:inline-block;padding:16px 40px;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--ivory);background:var(--gold);text-decoration:none;transition:all .3s}
+.btn-gold:hover{background:var(--gold-dk)}
+.btn-outline{display:inline-block;padding:16px 40px;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--charcoal);background:none;border:1px solid var(--charcoal);text-decoration:none;transition:all .3s}
+.btn-outline:hover{background:var(--charcoal);color:var(--ivory)}
+
+/* Gold bar */
+.gold-bar{height:4px;background:linear-gradient(90deg,var(--gold-lt),var(--gold),var(--gold-lt))}
+
+/* Three pillars */
+.pillars{background:var(--ivory);padding:100px 0}
+.pillars-label{text-align:center;margin-bottom:56px}
+.s-label{font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.s-heading{font-family:var(--serif);font-size:clamp(28px,3.5vw,42px);font-weight:400;font-style:italic;line-height:1.2;color:var(--charcoal)}
+.pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;max-width:1100px;margin:0 auto;padding:0 48px}
+.pillar{text-align:center}
+.pillar-icon{width:56px;height:56px;border-radius:50%;background:var(--tan);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:22px;color:var(--gold-dk)}
+.pillar h3{font-family:var(--serif);font-size:22px;font-weight:500;color:var(--charcoal);margin-bottom:12px}
+.pillar p{font-size:14px;font-weight:300;color:var(--mid);line-height:1.8;max-width:320px;margin:0 auto}
+
+/* About — image left, text right */
+.about{background:var(--cream);padding:100px 0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;max-width:1100px;margin:0 auto;padding:0 48px}
+.about-img{position:relative;overflow:hidden}
+.about-img img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:brightness(.92);transition:transform .7s}
+.about-img:hover img{transform:scale(1.02)}
+.about-img::after{content:'';position:absolute;top:16px;left:16px;right:-16px;bottom:-16px;border:1px solid var(--gold-lt);z-index:-1}
+.about-text .s-label{margin-bottom:16px}
+.about-text h2{font-family:var(--serif);font-size:clamp(26px,3vw,38px);font-weight:400;line-height:1.2;color:var(--charcoal);margin-bottom:20px}
+.about-text h2 em{font-style:italic;color:var(--gold-dk)}
+.about-text p{font-size:15px;font-weight:300;color:var(--mid);line-height:1.9;margin-bottom:16px}
+
+/* Services */
+.services{background:var(--ivory);padding:100px 0}
+.svc-head{text-align:center;max-width:600px;margin:0 auto 56px;padding:0 48px}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;padding:0 48px}
+.svc-card{background:var(--cream);border:1px solid rgba(0,0,0,.04);padding:40px 28px;text-align:center;transition:all .3s;position:relative;overflow:hidden}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform .4s;transform-origin:left}
+.svc-card:hover::before{transform:scaleX(1)}
+.svc-card:hover{box-shadow:0 8px 40px rgba(0,0,0,.06);transform:translateY(-3px)}
+.svc-icon{font-size:28px;margin-bottom:20px;color:var(--gold)}
+.svc-card h3{font-family:var(--serif);font-size:22px;font-weight:500;color:var(--charcoal);margin-bottom:10px}
+.svc-card p{font-size:14px;font-weight:300;color:var(--mid);line-height:1.7}
+
+/* Products */
+.products{background:var(--tan);padding:80px 0}
+.products-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;max-width:1100px;margin:0 auto;padding:0 48px}
+.products-text h2{font-family:var(--serif);font-size:clamp(26px,3vw,38px);font-weight:400;font-style:italic;color:var(--charcoal);margin-bottom:20px}
+.products-text p{font-size:15px;font-weight:300;color:var(--mid);line-height:1.9;margin-bottom:16px}
+.product-list{list-style:none;margin-top:20px}
+.product-list li{font-family:var(--display);font-size:20px;color:var(--charcoal);padding:10px 0;border-bottom:1px solid rgba(0,0,0,.06);display:flex;align-items:center;gap:12px}
+.product-list li::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.products-img{overflow:hidden}
+.products-img img{width:100%;aspect-ratio:4/3;object-fit:cover;filter:brightness(.92)}
+
+/* Gallery strip */
+.gallery-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;height:300px;overflow:hidden}
+.gs-img{overflow:hidden}
+.gs-img img{width:100%;height:100%;object-fit:cover;filter:brightness(.88) saturate(.85);transition:all .5s}
+.gs-img:hover img{filter:brightness(.96) saturate(.95);transform:scale(1.04)}
+
+/* CTA */
+.cta-banner{background:var(--charcoal);padding:80px 48px;text-align:center;position:relative;overflow:hidden}
+.cta-banner::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C5A355' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.cta-banner h2{font-family:var(--serif);font-size:clamp(26px,3.5vw,40px);font-weight:400;font-style:italic;color:var(--cream);margin-bottom:12px;position:relative}
+.cta-banner p{font-size:15px;font-weight:300;color:var(--faint);margin-bottom:32px;position:relative}
+.cta-banner .btn-gold{position:relative}
+
+/* Reviews */
+.reviews{background:var(--cream);padding:80px 0}
+.reviews-head{text-align:center;margin-bottom:48px}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;padding:0 48px}
+.review-card{background:var(--ivory);padding:32px;border:1px solid rgba(0,0,0,.04)}
+.review-stars{color:var(--gold);font-size:16px;letter-spacing:2px;margin-bottom:12px}
+.review-card p{font-family:var(--serif);font-size:16px;font-style:italic;color:var(--dark);line-height:1.6;margin-bottom:16px}
+.review-name{font-size:13px;font-weight:500;color:var(--mid);letter-spacing:1px}
+
+/* Contact */
+.contact{background:var(--ivory);padding:100px 0}
+.contact-head{text-align:center;margin-bottom:56px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;max-width:1100px;margin:0 auto;padding:0 48px}
+.c-block{margin-bottom:28px}
+.c-label{font-size:10px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.c-val{font-family:var(--display);font-size:22px;font-weight:400;color:var(--charcoal)}
+.c-val a{color:var(--charcoal);text-decoration:none;transition:color .3s}
+.c-val a:hover{color:var(--gold-dk)}
+.c-map{overflow:hidden;min-height:400px;background:var(--warm)}
+.c-map iframe{width:100%;height:100%;min-height:400px;border:0;filter:saturate(.5) contrast(.9) sepia(.15)}
+
+/* Newsletter */
+.newsletter{background:var(--warm);padding:56px 48px;text-align:center}
+.newsletter h3{font-family:var(--serif);font-size:24px;font-weight:400;font-style:italic;color:var(--charcoal);margin-bottom:8px}
+.newsletter p{font-size:14px;font-weight:300;color:var(--mid);margin-bottom:24px}
+.nl-form{display:flex;gap:0;max-width:440px;margin:0 auto}
+.nl-form input{flex:1;padding:14px 20px;border:1px solid var(--faint);border-right:none;background:var(--ivory);font-family:var(--sans);font-size:14px;color:var(--dark);outline:none}
+.nl-form input::placeholder{color:var(--faint)}
+.nl-form button{padding:14px 28px;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--ivory);background:var(--gold);border:1px solid var(--gold);cursor:pointer;transition:all .3s;font-family:var(--sans)}
+.nl-form button:hover{background:var(--gold-dk)}
+
+/* Footer */
+footer{background:var(--charcoal);padding:48px 56px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:40px}
+.f-brand{display:flex;flex-direction:column;gap:8px}
+.f-logo{font-family:var(--serif);font-size:16px;font-weight:700;color:var(--cream);letter-spacing:2px;text-transform:uppercase}
+.f-logo em{font-style:italic;font-weight:400;color:var(--gold);text-transform:none;font-size:18px}
+.f-tagline{font-size:12px;font-weight:300;color:var(--faint);letter-spacing:1px}
+.f-links{display:flex;gap:28px}
+.f-links a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--light);text-decoration:none;transition:color .3s}
+.f-links a:hover{color:var(--gold)}
+.f-copy{text-align:right;font-size:11px;color:rgba(255,255,255,.25)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.fi{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.fi.vis{opacity:1;transform:translateY(0)}
+
+@media(max-width:900px){
+  nav{padding:0 20px;height:60px}
+  .nav-links,.nav-phone{display:none}.nav-toggle{display:flex}
+  .nav-links.open{display:flex;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--cream);align-items:center;justify-content:center;gap:24px;z-index:999}
+  .nav-links.open a{font-size:15px;color:var(--charcoal)}
+  .hero{grid-template-columns:1fr;min-height:auto;margin-top:60px}
+  .hero-img{min-height:50vh}
+  .hero-right{padding:40px 24px}
+  .pillars-grid{grid-template-columns:1fr;gap:40px;padding:0 24px}
+  .about-grid{grid-template-columns:1fr;gap:40px;padding:0 24px}
+  .about-img::after{display:none}
+  .svc-grid{grid-template-columns:1fr;padding:0 24px}
+  .svc-head{padding:0 24px}
+  .products-grid{grid-template-columns:1fr;gap:32px;padding:0 24px}
+  .gallery-strip{grid-template-columns:repeat(2,1fr);height:auto}
+  .gs-img{height:200px}
+  .review-grid{grid-template-columns:1fr;padding:0 24px}
+  .contact-grid{grid-template-columns:1fr;gap:32px;padding:0 24px}
+  .contact-head,.reviews-head,.pillars-label{padding:0 24px}
+  footer{grid-template-columns:1fr;gap:16px;padding:32px 24px;text-align:center}
+  .f-links{justify-content:center;flex-wrap:wrap}
+  .f-copy{text-align:center}
+  .newsletter{padding:40px 24px}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#" class="logo">AMERICA <em>Hairstyle</em></a>
+  <ul class="nav-links" id="nL">
+    <li><a href="#about" onclick="cN()">About</a></li>
+    <li><a href="#services" onclick="cN()">Services</a></li>
+    <li><a href="#reviews" onclick="cN()">Reviews</a></li>
+    <li><a href="#contact" onclick="cN()">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="tel:212-878-7007" class="nav-phone">(212) 878-7007</a>
+    <a href="https://americahairstyleinternational.com/" class="nav-cta" target="_blank">Book Today</a>
+  </div>
+  <button class="nav-toggle" onclick="tN()"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-img">
+    <img src="images/hair-windswept.jpg" alt="Beautiful hairstyle">
+  </div>
+  <div class="hero-right" style="animation:fadeUp .9s ease-out">
+    <p class="hero-welcome">Welcome</p>
+    <h1><strong>America Hairstyle</strong>Heighten<br>Yourself.</h1>
+    <p class="hero-desc">We are passionate about hair. Our expert stylists will help you create a signature look you'll be sure to love &mdash; highlighting the beauty of the person inside and out.</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap">
+      <a href="https://americahairstyleinternational.com/" class="btn-gold" target="_blank">Start Today</a>
+      <a href="#services" class="btn-outline">Our Services</a>
+    </div>
+  </div>
+</section>
+
+<div class="gold-bar"></div>
+
+<!-- Three Pillars -->
+<section class="pillars">
+  <div class="pillars-label fi">
+    <p class="s-label">About Us</p>
+    <h2 class="s-heading">What Sets Us Apart</h2>
+  </div>
+  <div class="pillars-grid fi">
+    <div class="pillar">
+      <div class="pillar-icon">&#10022;</div>
+      <h3>Our Mission</h3>
+      <p>We are passionate about hair. We believe that in every client there is beauty and uniqueness waiting to be revealed. Our mission is to highlight the beauty of the person inside and out.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">&#9733;</div>
+      <h3>Products We Use</h3>
+      <p>We use only the finest professional products: Brazilian Blowout, Paul Mitchell, Joico, Redken, Goldwell, L'Or&eacute;al, Pravana, and Viviscal &mdash; trusted brands for stunning results.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">&#9825;</div>
+      <h3>Hair Care</h3>
+      <p>Our experts have a range of skills, services, and cutting-edge hair products to make your hair look and feel amazing. From color to cuts, your hair wishes will come true.</p>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about" id="about">
+  <div class="about-grid fi">
+    <div class="about-img">
+      <img src="images/hair-dramatic.jpg" alt="Hair styling">
+    </div>
+    <div class="about-text">
+      <p class="s-label">About Our Salon</p>
+      <h2>America Hairstyle <em>International</em></h2>
+      <p>For years, America Hairstyle International has been creating beautiful hair transformations in New York City. Our team of skilled stylists stays current with the latest trends and techniques to deliver results that exceed expectations.</p>
+      <p>Whether you're looking for a bold new look or a subtle refresh, our salon provides a warm, welcoming environment where your vision comes to life. We specialize in all hair types and textures.</p>
+      <a href="https://americahairstyleinternational.com/" class="btn-gold" style="margin-top:28px" target="_blank">Book Your Visit</a>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="services" id="services">
+  <div class="svc-head fi">
+    <p class="s-label">What We Offer</p>
+    <h2 class="s-heading">Services &amp; Expertise</h2>
+  </div>
+  <div class="svc-grid fi">
+    <div class="svc-card">
+      <div class="svc-icon">&#9986;</div>
+      <h3>Haircuts &amp; Styling</h3>
+      <p>Precision cuts for men, women, and children. From classic to contemporary — tailored to your unique style.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">&#9672;</div>
+      <h3>Color &amp; Highlights</h3>
+      <p>Full color, balayage, ombr&eacute;, highlights and lowlights using premium products for vibrant, lasting results.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">&#10023;</div>
+      <h3>Brazilian Blowout</h3>
+      <p>Smooth, frizz-free, and shiny hair that lasts for weeks. Our signature smoothing treatment is a client favorite.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">&#8766;</div>
+      <h3>Keratin Treatment</h3>
+      <p>Professional keratin smoothing to reduce frizz and add incredible shine while keeping your hair healthy.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">&#9740;</div>
+      <h3>Perms &amp; Texture</h3>
+      <p>Expert texture services including perms, relaxers, and wave treatments customized to your hair type.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">&#10029;</div>
+      <h3>Treatments &amp; Care</h3>
+      <p>Deep conditioning, scalp treatments, and restorative therapies to keep your hair healthy and strong.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section class="products">
+  <div class="products-grid fi">
+    <div class="products-text">
+      <p class="s-label">Premium Quality</p>
+      <h2>Products We Trust</h2>
+      <p>We believe the best results come from the best products. That's why we exclusively use salon-grade brands trusted by professionals worldwide.</p>
+      <ul class="product-list">
+        <li>Brazilian Blowout</li>
+        <li>Paul Mitchell</li>
+        <li>Joico &amp; Redken</li>
+        <li>Goldwell &amp; L'Or&eacute;al</li>
+        <li>Pravana &amp; Viviscal</li>
+      </ul>
+    </div>
+    <div class="products-img">
+      <img src="images/salon-products.jpg" alt="Professional hair products">
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<div class="gallery-strip">
+  <div class="gs-img"><img src="images/hairbrush.jpg" alt="Hair brush"></div>
+  <div class="gs-img"><img src="images/fresh-hair.jpg" alt="Fresh hair"></div>
+  <div class="gs-img"><img src="images/product-minimal.jpg" alt="Hair products"></div>
+  <div class="gs-img"><img src="images/hair-dramatic.jpg" alt="Hair styling"></div>
+</div>
+
+<!-- CTA -->
+<div class="cta-banner">
+  <h2>Ready for Your New Signature Look?</h2>
+  <p>Book your appointment now and let our expert stylists transform your hair.</p>
+  <a href="https://americahairstyleinternational.com/" class="btn-gold" target="_blank">Book Your Appointment</a>
+</div>
+
+<!-- Reviews -->
+<section class="reviews" id="reviews">
+  <div class="reviews-head fi">
+    <p class="s-label">Testimonials</p>
+    <h2 class="s-heading">What Our Clients Say</h2>
+  </div>
+  <div class="review-grid fi">
+    <div class="review-card">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>"Amazing experience! The stylists really listen to what you want and deliver every single time. My hair has never looked better."</p>
+      <div class="review-name">&mdash; Happy Client</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>"I've been coming here for years and I wouldn't trust anyone else with my hair. The Brazilian Blowout is life-changing!"</p>
+      <div class="review-name">&mdash; Loyal Customer</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>"Professional, friendly, and incredibly talented. They transformed my hair and I left feeling like a million bucks."</p>
+      <div class="review-name">&mdash; Satisfied Client</div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="contact-head fi">
+    <p class="s-label">Visit Us</p>
+    <h2 class="s-heading">Get in Touch</h2>
+  </div>
+  <div class="contact-grid fi">
+    <div>
+      <div class="c-block"><div class="c-label">Phone</div><div class="c-val"><a href="tel:212-878-7007">(212) 878-7007</a></div></div>
+      <div class="c-block"><div class="c-label">Website</div><div class="c-val"><a href="https://americahairstyleinternational.com/" target="_blank">americahairstyleinternational.com</a></div></div>
+      <div class="c-block"><div class="c-label">Follow Us</div><div class="c-val" style="font-size:16px"><a href="https://www.instagram.com/americahairstyle/" target="_blank">@americahairstyle</a></div></div>
+      <div style="margin-top:32px;display:flex;gap:14px;flex-wrap:wrap">
+        <a href="https://americahairstyleinternational.com/" class="btn-gold" target="_blank">Book Appointment</a>
+        <a href="tel:212-878-7007" class="btn-outline">Call Now</a>
+      </div>
+    </div>
+    <div class="c-map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.5!2d-73.99!3d40.75!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1700000000000" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<div class="newsletter">
+  <h3>Be Part of Our Community</h3>
+  <p>Sign up to hear from us about special events, sales, contests, and beauty tips.</p>
+  <div class="nl-form">
+    <input type="email" placeholder="Your email address">
+    <button>Subscribe</button>
+  </div>
+</div>
+
+<footer>
+  <div class="f-brand">
+    <div class="f-logo">AMERICA <em>Hairstyle</em></div>
+    <div class="f-tagline">International Hair Salon &middot; New York City</div>
+  </div>
+  <div class="f-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="f-copy">&copy; 2026 America Hairstyle International. All rights reserved.</div>
+</footer>
+
+<script>
+const nb=document.getElementById('nav');
+window.addEventListener('scroll',()=>nb.classList.toggle('scrolled',window.scrollY>60));
+function tN(){document.getElementById('nL').classList.toggle('open')}
+function cN(){document.getElementById('nL').classList.remove('open')}
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:.1});
+document.querySelectorAll('.fi').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
